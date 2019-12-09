@@ -45,11 +45,11 @@ namespace Chefs_n_Dishes.Controllers
         }
 
         [HttpPost("dishes/create")]
-        public IActionResult Create(Dish newDish)
+        public IActionResult Create(MainModel newDish)
         {
             if (ModelState.IsValid)
             {
-                _db.Dishes.Add(newDish);
+                _db.Dishes.Add(newDish.Dish);
                 _db.SaveChanges();
                 return RedirectToAction("All");
             }

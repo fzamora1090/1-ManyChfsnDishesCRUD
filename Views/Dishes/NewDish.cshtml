@@ -41,16 +41,22 @@
             <span class="text-danger" asp-validation-for="Dish.Chef"></span>
             <label asp-for="Dish.Chef">Chef</label>
             
-            <select class="custom-select form-control" asp-for="Dish.Chef" placeholder="Chef">
+            <select class="custom-select form-control" asp-for="Dish.ChefId" placeholder="Chef">
                 <option selected>Choose a Chef...</option>
                 @foreach (Chef currentChef in Model.allChefs)
                 {
-                    <option asp-for="@currentChef.ChefId" value="@currentChef.FullName()">@currentChef.FullName()</option>
+                    <option asp-for="@currentChef.ChefId" value="@currentChef.ChefId">@currentChef.FullName()</option>
 
                 }
             </select>
         </div>
        
         <button type="submit" class="btn btn-md btn-primary">Submit</button>
+        <a class="btn btn-md btn-secondary " asp-controller="Dishes" asp-action="All">Cancel</a>
+
     </form>
+
+
+
+
 </div>
