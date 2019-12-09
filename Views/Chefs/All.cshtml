@@ -7,17 +7,18 @@
 </div>
 <hr>
 <div>
-    @foreach (Chef currentChef in Model)
+
+    <div class="card mx-auto text-center mb-3" style="">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col"># of Dishes</th>
+            </tr>
+        </thead>
+        @foreach (Chef currentChef in Model)
         {
-            <div class="card mx-auto text-center mb-3" style="">
-                <table class="table table-striped">
-                <thead>
-                    <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col"># of Dishes</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                     <td>@currentChef.FullName()</td>
@@ -26,8 +27,8 @@
                     </tr>
                     
                 </tbody>
-                </table>  
-                  <!-- <p>@currentChef.Date_of_Birth</p>  -->
-            </div>
         }
+        </table>
+    </div>
+        
 </div>

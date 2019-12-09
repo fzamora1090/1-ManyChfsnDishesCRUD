@@ -7,19 +7,20 @@
 </div>
 <hr>
 <div>
-    @foreach (Dish currentDish in Model)
-        {
-            <div class="card mx-auto text-center mb-3" style="">
-                <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Chef</th>
-                        <th scope="col">Tastiness</th>
-                        <th scope="col">Calories</th>
+    
+    <div class="card mx-auto text-center mb-3" style="">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Chef</th>
+                <th scope="col">Tastiness</th>
+                <th scope="col">Calories</th>
 
-                    </tr>
-                </thead>
+            </tr>
+        </thead>
+        @foreach (Dish currentDish in Model)
+        {
                 <tbody>
                     <tr>
                         <td>@currentDish.Name</td>
@@ -30,8 +31,9 @@
                     </tr>
                     
                 </tbody>
+        }
                 </table>  
 
             </div>
-        }
+        
 </div>
