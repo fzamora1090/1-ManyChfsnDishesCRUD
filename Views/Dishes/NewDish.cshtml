@@ -1,0 +1,56 @@
+@model MainModel
+
+<div class="container">
+    <h1> Make new dish</h1>
+    <form asp-controller="Dishes" asp-action="Create">
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Dish.Name"></span>
+            <label asp-for="Dish.Name">Name</label>
+            <input type="text" class="form-control" asp-for="Dish.Name" placeholder="Dish Name">
+        </div>
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Dish.Calories"></span>
+            <label asp-for="Dish.Calories">Calories</label>
+            <input type="number" class="form-control" asp-for="Dish.Calories" placeholder="Calories">
+        </div>
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Dish.Tastiness"></span>
+            <label asp-for="Dish.Tastiness">Tastiness</label>
+            
+            <select class="custom-select form-control" asp-for="Dish.Tastiness" placeholder="Tastiness">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+            </select>
+            <!-- <input type="number" class="form-control" asp-for="Dish.Tastiness" placeholder="Tastiness"> -->
+        </div>
+
+         <div class="form-group">
+            <span class="text-danger" asp-validation-for="Dish.Description"></span>
+            <label asp-for="Dish.Description">Description</label>
+            <input type="textarea" class="form-control" asp-for="Dish.Description" placeholder="Description">
+        </div>
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Dish.Chef"></span>
+            <label asp-for="Dish.Chef">Chef</label>
+            
+            <select class="custom-select form-control" asp-for="Dish.Chef" placeholder="Chef">
+                <option selected>Choose a Chef...</option>
+                @foreach (Chef currentChef in Model.allChefs)
+                {
+                    <option asp-for="@currentChef.ChefId" value="@currentChef.FullName()">@currentChef.FullName()</option>
+
+                }
+            </select>
+        </div>
+       
+        <button type="submit" class="btn btn-md btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+@model List<Chef>;
+
+<div class="container">
+    <h3 class="text-center" >All Chefs</h3> 
+    <p class="text-right "><a asp-controller="Chefs" asp-action="New">New Chef</a> </p>
+
+</div>
+<hr>
+<div>
+    @foreach (Chef currentChef in Model)
+        {
+            <div class="card mx-auto text-center mb-3" style="">
+                <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col"># of Dishes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>@currentChef.FullName()</td>
+                    <td>@currentChef.Age(@currentChef.Date_of_Birth)</td>
+                    <td>@currentChef.Dishes.Count</td>
+                    </tr>
+                    
+                </tbody>
+                </table>  
+                  <!-- <p>@currentChef.Date_of_Birth</p>  -->
+            </div>
+        }
+</div>

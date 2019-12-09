@@ -1,0 +1,27 @@
+@model Chef
+
+<div class="container">
+    <h1> Make new Chef</h1>
+    <form asp-controller="Chefs" asp-action="Create">
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+            <label asp-for="FirstName">FirstName</label>
+            <input type="text" class="form-control" asp-for="FirstName" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="LastName"></span>
+            <label asp-for="LastName">LastName</label>
+            <input type="text-area" class="form-control" asp-for="LastName" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+            <span class="text-danger" asp-validation-for="Date_of_Birth"></span>
+            <label asp-for="Date_of_Birth">Date_of_Birth</label>
+            <input type="date" class="form-control" asp-for="Date_of_Birth" placeholder="Date of Birth">
+        </div>
+       
+        <button type="submit" class="btn btn-md btn-primary">Submit</button>
+    </form>
+</div>

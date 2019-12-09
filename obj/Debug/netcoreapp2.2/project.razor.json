@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/Users/franciscozamora/Documents/Dojo2019/dotNET/ASP/Chefs_n_Dishes/Chefs_n_Dishes.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  }
+}
